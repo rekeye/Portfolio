@@ -1,4 +1,10 @@
+@import '../../../node_modules/normalize-scss/sass/normalize'; //takes care of the bulk of resets
+// https://github.com/necolas/normalize.css
+// https://github.com/JohnAlbin/normalize-scss
+
 * {
     box-sizing: border-box;
     margin: 0;
 }
+
+@include normalize();
