@@ -1,0 +1,28 @@
+.landing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    margin-top: 1em;
+  }
+  &__title {
+    writing-mode: vertical-lr;
+    height: 8em;
+    &--lower {
+      text-align: right;
+    }
+  }
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  &__link {
+    width: 40%;
+  }
+}
