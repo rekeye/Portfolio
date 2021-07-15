@@ -1,0 +1,23 @@
+.landing {
+  @include flex(column, space-between);
+  @include background-primary;
+  @include padding;
+  min-height: 100vh;
+  &__main {
+    @include flex($justify-content: center, $align-items: center);
+    padding: 2em;
+    margin-top: 1em;
+  }
+  &__nav {
+    @include flex(column, $align-items: flex-end);
+  }
+  &__link {
+    width: 40%;
+    &:hover {
+      background: $secondary-background;
+    }
+  }
+  h1 {
+    height: 8em;
+  }
+}

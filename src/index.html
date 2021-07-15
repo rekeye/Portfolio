@@ -12,20 +12,63 @@
 </head>
 
 <body>
-    <section class="landing background-primary base-padding">
+    <section class="landing">
         <header>
             <h4>Szymon Paluch</h4>
         </header>
         <main class="landing__main">
-            <h1 class="landing__title landing__title--lower">Developer</h1>
-            <h1 class="landing__title">Front-End</h1>
+            <h1 class="title--vert title--lower">Developer</h1>
+            <h1 class="title--vert">Front-End</h1>
         </main>
         <nav class="landing__nav">
-            <a href="" class="landing__link">O mnie</a>
-            <a href="" class="landing__link">Moje prace</a>
-            <a href="" class="landing__link">Kontakt</a>
+            <a href="#about" class="landing__link">O mnie</a>
+            <a href="#work" class="landing__link">Moje prace</a>
+            <a href="#contact" class="landing__link">Kontakt</a>
         </nav>
     </section>
+    <section class="about">
+        <h2 class="title--vert title--flex-end" id="about">O mnie</h2>
+        <p>Cześć, mam na imię Szymon jestem uczniem technikum informatycznego. Przy każdej możliwości kształce się w kierunku zostania Front-End Developerem</p>
+        <div>
+            <h3>Moje umiejętności:</h3>
+            <ul>
+                <li>ReactJS</li>
+                <li>GatsbyJS</li>
+                <li>JavaScript (EcmaScript 11)</li>
+                <li>GraphQL</li>
+                <li>HTML5</li>
+                <li>SCSS</li>
+                <li>Git</li>
+            </ul>
+            <h3>Nadal uczę się:</h3>
+            <ul>
+                <li>Wordpress</li>
+                <li>Webpack</li>
+            </ul>
+        </div>
+    </section>
+    <section class="work">
+        <h2 class="title" id="work">Moje prace</h2>
+    </section>
+    <section class="contact">
+        <h2 class="title--vert title--flex-end" id="contact">Kontakt</h2>
+        <!--place for contact form - need to create the backend first-->
+        <main>
+            <div class="contact__type">
+                <h3>Zadzwoń do mnie:</h3>
+                <a class="contact__button" href="tel:+48508653443">508 653 443</a>
+            </div>
+            <div class="contact__type">
+                <h3>GitHub:</h3>
+                <a class="contact__button" href="https://github.com/rekeye" target="_blank" rel="noopener noreferrer">Sprawdź mój GitHub</a>
+            </div>
+            <div class="contact__type">
+                <h3>LinkedIn:</h3>
+                <a class="contact__button" href="https://www.linkedin.com/in/szymon-paluch-89b329212/" target="_blank" rel="noopener noreferrer">Sprawdź mój LinkedIn</a>
+            </div>
+        </main>
+    </section>
+    <footer><small>@Szymon Paluch, 2021</small></footer>
 </body>
 
 </html>

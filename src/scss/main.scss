@@ -1,9 +1,15 @@
-//base
-@import "./base/variables";
-@import "./base/colors";
-@import "./base/resets";
-@import "./base/typography";
-@import "./base/utility";
+@charset 'utf-8';
 
-//modules
-@import "./modules/landing";
+//this file contains all combined -dir.scss import files
+
+//abstracts
+@import "./abstracts/_abstracts-dir";
+
+//base
+@import "./base/_base-dir";
+
+//components
+@import "./components/_components-dir";
+
+//layouts
+@import "./layouts/_layouts-dir";

@@ -1,0 +1,21 @@
+//multi purposed flex mixin
+@mixin flex($direction: row, $justify-content: start, $align-items: normal) {
+  display: flex;
+  @if $direction != row {
+    flex-direction: $direction;
+  }
+  @if $justify-content != start {
+    justify-content: $justify-content;
+  }
+  @if $align-items != normal {
+    align-items: $align-items;
+  }
+}
+//primary colored background mixin
+@mixin background-primary {
+  background: $primary-background-300;
+}
+//default padding mixin
+@mixin padding {
+  padding: 10px;
+}
