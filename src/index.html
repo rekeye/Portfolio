@@ -25,7 +25,7 @@
         </header>
         <div class="hero__about two-columns">
             <h3 class="hero__info-title">
-                cześć, mam na imię Szymon
+                cześć! mam na imię Szymon
             </h3>
             <p>
                 jestem uczniem czwartej klasy technikum informatycznego ZST w Bytomiu
@@ -41,10 +41,22 @@
     </section>
     <section class="work" id="work">
         <h2>Moje projekty:</h2>
+        <div class="work__content"></div>
+        <a class="cta__link text-center" href="https://github.com/rekeye" target="_blank" rel="noopener noreferrer">Więcej projektów</a>
     </section>
     <section class="contact" id="contact">
         <h2 class="title--flex-end">Kontakt</h2>
-        <!-- place for contact form -->
+        <form class="contact__form" action="https://formsubmit.co/12szymon.paluch34@gmail.com" method="post"> 
+            <label for="name">Imię: </label>
+            <input class="contact__input" type="text" name="name" placeholder="Imię" required>
+            <label for="email">Adres mailowy:</label>
+            <input class="contact__input" type="email" name="email"  placeholder="Adres email" required>
+            <label for="message">Twoja wiadomość</label>
+            <textarea class="contact__textarea" name="message" cols="30" rows="10" required></textarea>
+            <input class="contact__submit" type="submit" value="Wyślij">
+
+            <input type="hidden" name="_subject" value="Portfolio - formularz kontaktowy">
+        </form>
         <main>
             <h3>Inne formy kontaktu:</h3>
             <div class="icon__container">

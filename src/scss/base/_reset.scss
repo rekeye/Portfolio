@@ -8,5 +8,11 @@ body {
 section {
   @include flex(column);
   @include padding;
-  min-height: 100vh;
+  @media (min-width: $tablet-width) {
+    padding: 1rem 6rem;
+  }
+}
+
+.text-center {
+  text-align: center;
 }

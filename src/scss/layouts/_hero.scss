@@ -1,6 +1,7 @@
 .hero {
   @include flex(column, space-between);
   @include background-primary;
+  min-height: 80vh;
   &__nav {
     flex-grow: 1;
     @include flex(column, $align: flex-end);
@@ -15,7 +16,7 @@
     }
   }
   &__about {
-    margin: 3rem 1.5rem;
+    margin: 3rem 1rem;
     @include tablet {
       width: 60%;
     }

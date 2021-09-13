@@ -2,4 +2,32 @@
   @include flex(column, space-between, center);
   @include background-primary;
   min-height: 94vh;
+  &__form {
+    @include flex(column);
+    @media (min-width: $tablet-width) {
+      width: 40%;
+    }
+    label {
+      padding: 1rem 0 0.5rem 0;
+    }
+  }
+  &__input,
+  &__textarea,
+  &__submit {
+    @include padding;
+    background: $primary-font;
+    color: $primary-background-300;
+  }
+  &__input,
+  &__textarea {
+    font-weight: 600;
+  }
+  &__textarea {
+    resize: none;
+  }
+  &__submit {
+    margin: 1rem 0;
+    border: 0;
+    font-size: $h4-font-size;
+  }
 }
