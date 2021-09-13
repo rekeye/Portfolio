@@ -1,5 +1,4 @@
 body {
-  font-size: $base-font-size;
   color: $primary-font;
   font-family: $base-font-family;
 }
@@ -8,6 +7,7 @@ h2,
 h3,
 h4 {
   font-weight: 450;
+  margin: 0.25rem 0;
 }
 h1 {
   font-family: $display-font-family;
@@ -16,7 +16,8 @@ h1 {
 h2,
 h3,
 h4,
-a {
+a,
+button {
   font-family: $heading-font-family;
 }
 h2 {
@@ -26,7 +27,8 @@ h3 {
   font-size: $h3-font-size;
 }
 h4,
-a {
+a,
+button {
   font-size: $h4-font-size;
 }
 a {

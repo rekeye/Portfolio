@@ -5,3 +5,8 @@
 body {
   background: $secondary-background;
 }
+section {
+  @include flex(column);
+  @include padding;
+  min-height: 100vh;
+}

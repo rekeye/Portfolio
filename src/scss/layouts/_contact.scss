@@ -1,10 +1,5 @@
 .contact {
-  @include flex(column, space-between);
+  @include flex(column, space-between, center);
   @include background-primary;
-  @include padding;
-  min-height: 96vh;
-  &__type {
-    margin: 0.5rem 0;
-    @include flex($justify-content: space-between);
-  }
+  min-height: 94vh;
 }
