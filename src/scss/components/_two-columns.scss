@@ -1,0 +1,3 @@
+.two-columns {
+  @include flex($justify: space-between);
+}

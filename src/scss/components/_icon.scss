@@ -1,0 +1,7 @@
+.icon {
+  font-size: 2.5rem;
+  &__container {
+    @include flex($justify: space-between);
+    margin-top: 1rem;
+  }
+}

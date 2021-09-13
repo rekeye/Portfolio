@@ -1,0 +1,29 @@
+.hero {
+  @include flex(column, space-between);
+  @include background-primary;
+  &__nav {
+    flex-grow: 1;
+    @include flex(column, $align: flex-end);
+  }
+  &__link {
+    width: 100%;
+    padding: 0.15rem 0.5rem;
+    &:hover {
+      background: $primary-font;
+      color: $primary-background-300;
+      opacity: 0.95;
+    }
+  }
+  &__about {
+    margin: 3rem 1.5rem;
+    @include tablet {
+      width: 60%;
+    }
+    @include desktop {
+      width: 40%;
+    }
+  }
+  &__info-title {
+    margin: 1rem 0;
+  }
+}
