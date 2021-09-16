@@ -1,4 +1,4 @@
 footer {
-  @include background-primary;
+  background: $primary-background-600;
   @include padding;
 }

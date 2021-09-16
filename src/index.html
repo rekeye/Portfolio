@@ -12,17 +12,19 @@
 </head>
 
 <body>
+    <header class="header">
+        <a href="/"><h1>Szymon Paluch</h1></a>
+        <div>
+            <nav class="header__nav" id="nav">
+                <a class="header__link" href="#about">O mnie</a>
+                <a class="header__link" href="#work">Projekty</a>
+                <a class="header__link" href="#contact">Kontakt</a>
+            </nav>
+        </div>
+    </header>
     <section class="hero" id="about">
-        <header class="two-columns">
-            <a href="/"><h1>Szymon Paluch</h1></a>
-            <div>
-                <nav class="hero__nav" id="nav">
-                    <a class="hero__link" href="#about">O mnie</a>
-                    <a class="hero__link" href="#work">Moje projekty</a>
-                    <a class="hero__link" href="#contact">Kontakt</a>
-                </nav>
-            </div>
-        </header>
+        <!-- <img src="" alt=""> -->
+        <div></div>
         <div class="hero__about two-columns">
             <h3 class="hero__info-title">
                 cześć! mam na imię Szymon
@@ -36,7 +38,6 @@
                 <a class="cta__link" href="#work">Sprawdź moje projekty</a>
                 <a class="cta__link" href="#contact">Skontaktujmy się</a>
             </nav>
-            <!-- <img src="" alt=""> -->
         </div>
     </section>
     <section class="work" id="work">
@@ -46,6 +47,7 @@
     </section>
     <section class="contact" id="contact">
         <h2 class="title--flex-end">Kontakt</h2>
+        <h3>Napisz do mnie maila:</h3>
         <form class="contact__form" action="https://formsubmit.co/12szymon.paluch34@gmail.com" method="post"> 
             <label for="name">Imię: </label>
             <input class="contact__input" type="text" name="name" placeholder="Imię" required>
@@ -72,7 +74,25 @@
             </div>
         </main>
     </section>
-    <footer>@Szymon Paluch, 2021</footer>
+    <footer>
+        <div>
+            <h3>Szymon Paluch</h3>
+            <h4>Front-End Developer</h4>
+        </div>
+        <div>
+            <h3>Gdzie mnie znaleźć</h3>
+            <a href="">Github</a>
+            <a href="">LinkedIn</a>
+            <a href="">Facebook</a>
+            <a href="">FreeCodeCamp</a>
+        </div>
+        <div>
+            <h3>menu</h4>
+            <a href="#about">O mnie</a>
+            <a href="#work">Moje projekty</a>
+            <a href="#contact">Kontakt</a>
+        </div>
+    </footer>
 </body>
 
 </html>
