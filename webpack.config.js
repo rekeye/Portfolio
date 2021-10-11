@@ -50,7 +50,7 @@ module.exports = {
   entry: ["regenerator-runtime/runtime.js", "./src/index.js"],
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "docs"),
+    path: path.resolve(__dirname, "dist"),
   },
   resolve: {
     fallback: {

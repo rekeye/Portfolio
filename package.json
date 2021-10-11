@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "main": "./dist/index.html",
+    "homepage": "https://rekeye.github.io/",
     "scripts": {
         "build": "webpack",
         "develop": "webpack serve",
