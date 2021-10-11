@@ -1,7 +1,11 @@
 .icon {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
+  @include desktop {
+    font-size: 2.5rem;
+  }
   &__container {
-    @include flex($justify: space-between);
     margin-top: 1rem;
+    @include padding;
+    @include flex($justify: space-between);
   }
 }

@@ -1,7 +1,7 @@
 .cta {
   margin: 1rem 0;
   width: 100%;
-  @include flex;
+  @include flex($justify: space-between);
   gap: 0.5rem;
   &__link {
     border: 0;

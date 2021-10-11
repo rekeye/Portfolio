@@ -3,11 +3,11 @@
     @media (min-width: $tablet-width) {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
     }
   }
   &__article {
-    @include flex(column, space-between);
-
     margin: 1rem 0;
+    @include flex(column, space-between);
   }
 }
