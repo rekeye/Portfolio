@@ -11,7 +11,8 @@
   }
   &__link {
     width: 100%;
-    padding: 0.15rem 0.5rem;
+    padding: 0.25rem 0.5rem;
+    margin: 0 0.5rem;
     &:hover {
       background: $primary-font;
       color: $primary-background-300;
@@ -19,6 +20,7 @@
     }
   }
   &--sticky {
+    z-index: 100;
     align-items: center;
     h1 {
       font-size: $h3-font-size;

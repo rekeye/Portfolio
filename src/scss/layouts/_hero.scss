@@ -1,6 +1,6 @@
 .hero {
   min-height: 100vh;
-  @include flex(column, space-between);
+  @include flex(column-reverse, space-between);
   @include background-primary;
   &__about {
     margin: 3rem 1rem;
@@ -13,5 +13,27 @@
   }
   &__info-title {
     margin: 1rem 0;
+  }
+  &__background {
+    display: none;
+    @include desktop {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    &--image {
+      z-index: 1;
+      height: 55rem;
+      width: 55rem;
+      background-image: url("../images/profile-pic.png");
+      background-size: cover;
+    }
+    &--triangle {
+      height: 0;
+      width: 0;
+      border-bottom: 25rem solid $primary-background-600;
+      border-left: 60rem solid transparent;
+    }
   }
 }
