@@ -1,7 +1,7 @@
 .hero {
+  min-height: 100vh;
   @include flex(column, space-between);
   @include background-primary;
-  min-height: 80vh;
   &__about {
     margin: 3rem 1rem;
     @include tablet {

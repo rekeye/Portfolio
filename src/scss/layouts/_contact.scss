@@ -1,22 +1,30 @@
 .contact {
-  @include flex(column, space-between, center);
   @include background-primary;
-  min-height: 94vh;
+  &__columns {
+    @include flex;
+    > div {
+      width: 50%;
+      padding: 2rem;
+      @include flex(column);
+    }
+  }
   &__form {
     @include flex(column);
-    @media (min-width: $tablet-width) {
-      width: 40%;
-    }
     label {
       padding: 1rem 0 0.5rem 0;
     }
   }
   &__input,
-  &__textarea,
-  &__submit {
+  &__textarea {
     @include padding;
+    background: $secondary-background;
+    color: $primary-font;
+    border: 0;
+  }
+  &__submit {
     background: $primary-font;
     color: $primary-background-300;
+    padding: 1rem;
   }
   &__input,
   &__textarea {
@@ -26,9 +34,13 @@
     resize: none;
   }
   &__submit {
+    cursor: pointer;
     margin: 1rem 0;
     border: 0;
     font-size: $h4-font-size;
+    &:hover {
+      opacity: 0.95;
+    }
   }
   h2 {
     width: 100%;
