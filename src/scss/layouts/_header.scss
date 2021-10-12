@@ -7,12 +7,19 @@
   @include flex($justify: space-between);
   &__nav {
     flex-grow: 1;
-    @include flex(column, $align: flex-end);
+    @include flex($align: flex-end);
+    @media (min-width: $tablet-width) {
+      flex-direction: column;
+    }
   }
   &__link {
-    width: 100%;
-    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    padding: 0.35rem;
     margin: 0 0.5rem;
+    @media (min-width: $tablet-width) {
+      font-size: 1.125rem;
+      padding: 0.5rem 1rem;
+    }
     &:hover {
       background: $primary-font;
       color: $primary-background-300;

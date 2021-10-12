@@ -1,9 +1,11 @@
 .contact {
   @include background-primary;
   &__columns {
-    @include flex;
+    @media (min-width: $tablet-width) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
     > div {
-      width: 50%;
       padding: 2rem;
       @include flex(column);
     }

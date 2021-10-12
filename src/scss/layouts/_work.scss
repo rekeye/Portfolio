@@ -9,10 +9,11 @@
     }
   }
   &__content {
+    padding: 1rem;
     @media (min-width: $tablet-width) {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      padding: 1.5rem;
     }
   }
   &__article {

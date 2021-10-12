@@ -1,11 +1,16 @@
 footer {
   background: $primary-background-600;
   padding: 2.5rem;
-  @include flex($justify: space-between);
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
   @include desktop {
     padding: 5rem;
   }
   div {
+    text-align: center;
+    margin: 1.5rem 0;
     @include flex(column);
   }
   a {
