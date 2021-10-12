@@ -9,7 +9,6 @@
     }
   }
   &__content {
-    padding: 1rem;
     @media (min-width: $tablet-width) {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -17,7 +16,7 @@
     }
   }
   &__article {
-    margin: 1rem 0;
+    margin: 1rem;
     @include flex(column, space-between);
   }
 }
