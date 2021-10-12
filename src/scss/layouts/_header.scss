@@ -1,4 +1,7 @@
 .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   @include background-primary;
   @include padding;
   @include flex($justify: space-between);
@@ -16,9 +19,6 @@
     }
   }
   &--sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
     align-items: center;
     h1 {
       font-size: $h3-font-size;

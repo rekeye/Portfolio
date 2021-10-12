@@ -5,7 +5,5 @@
   }
   &__container {
     margin-top: 1rem;
-    @include padding;
-    @include flex($justify: space-between);
   }
 }

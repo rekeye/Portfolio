@@ -4,10 +4,18 @@
   @include flex($justify: space-between);
   gap: 0.5rem;
   &__link {
+    cursor: pointer;
     border: 0;
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 0.75rem;
     background: $primary-font;
     color: $primary-background-600;
+    &--contact {
+      margin: 1rem;
+      @include flex($align: center);
+      span {
+        padding-left: 1rem;
+      }
+    }
     &:hover {
       opacity: 0.95;
     }

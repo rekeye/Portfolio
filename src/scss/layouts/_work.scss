@@ -1,4 +1,13 @@
 .work {
+  &__description {
+    padding: 1rem 0;
+    @include tablet {
+      width: 60%;
+    }
+    @include desktop {
+      width: 40%;
+    }
+  }
   &__content {
     @media (min-width: $tablet-width) {
       display: grid;
