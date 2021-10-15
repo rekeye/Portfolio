@@ -1,0 +1,16 @@
+.button {
+  padding: 0.35rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  &:hover {
+    background: $primary-font;
+    color: $primary-background-300;
+    opacity: 0.95;
+  }
+  &__lang--chosen {
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+}
