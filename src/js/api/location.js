@@ -4,6 +4,11 @@ const locationAPI = (lat, lng) =>
   axios({
     method: "GET",
     url: "https://eu1.locationiq.com/v1/reverse.php",
+    headers: {
+			'Access-Control-Allow-Origin': '*',
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+		},
     data: {
       key: process.env.LOCATIONIQ_ACCESS_TOKEN,
       lat: lat,
