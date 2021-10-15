@@ -4,13 +4,15 @@
   width: 100%;
   @include background-primary;
   @include padding;
-  @include flex($justify: space-between);
+  @include flex($justify: space-between, $align: center);
+  &__flex {
+    width: 100%;
+    @include flex($justify: space-between, $align: center);
+    flex-wrap: nowrap;
+  }
   &__nav {
     flex-grow: 1;
     @include flex($align: flex-end);
-    @media (min-width: $tablet-width) {
-      flex-direction: column;
-    }
   }
   &__link {
     font-size: 1rem;

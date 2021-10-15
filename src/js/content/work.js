@@ -1,7 +1,7 @@
 import githubReposAPI from "../api/githubRepos";
 import "regenerator-runtime/runtime";
 
-export default (async () => {
+const work = async () => {
   const parent = document.getElementsByClassName("work__content")[0];
 
   const data = await githubReposAPI();
@@ -21,8 +21,13 @@ export default (async () => {
 
           const usedTechs = document.createElement("div");
 
-          const usedTechsTitle = document.createElement("h4");
-          usedTechsTitle.innerHTML = "Użyte technologie: ";
+          const usedTechsTitlePL = document.createElement("h4");
+          usedTechsTitlePL.setAttribute("lang", "pl");
+          usedTechsTitlePL.innerHTML = "Użyte technologie: ";
+
+          const usedTechsTitleEN = document.createElement("h4");
+          usedTechsTitleEN.setAttribute("lang", "en");
+          usedTechsTitleEN.innerHTML = "Used technologies: ";
 
           const usedTechsList = document.createElement("ul");
           topics.forEach((topic) => {
@@ -31,7 +36,7 @@ export default (async () => {
             usedTechsList.appendChild(topicElement);
           });
 
-          usedTechs.append(usedTechsTitle, usedTechsList);
+          usedTechs.append(usedTechsTitlePL, usedTechsTitleEN, usedTechsList);
 
           const cta = document.createElement("div");
           cta.classList.add("cta");
@@ -41,20 +46,34 @@ export default (async () => {
           gitLink.setAttribute("target", "_blank");
           gitLink.setAttribute("rel", "noopener noreferrer");
 
-          const gitButton = document.createElement("button");
-          gitButton.classList.add("cta__link");
-          gitButton.innerHTML = "Repozytorium na Github";
-          gitLink.appendChild(gitButton);
+          const gitButtonPL = document.createElement("button");
+          gitButtonPL.setAttribute("lang", "pl");
+          gitButtonPL.classList.add("cta__link");
+          gitButtonPL.innerHTML = "Repozytorium na Github";
+          gitLink.appendChild(gitButtonPL);
+
+          const gitButtonEN = document.createElement("button");
+          gitButtonEN.setAttribute("lang", "en");
+          gitButtonEN.classList.add("cta__link");
+          gitButtonEN.innerHTML = "Github repo";
+          gitLink.appendChild(gitButtonEN);
 
           const webLink = document.createElement("a");
           webLink.setAttribute("href", homepage);
           webLink.setAttribute("target", "_blank");
           webLink.setAttribute("rel", "noopener noreferrer");
 
-          const webButton = document.createElement("button");
-          webButton.classList.add("cta__link");
-          webButton.innerHTML = "Odwiedź stronę";
-          webLink.appendChild(webButton);
+          const webButtonPL = document.createElement("button");
+          webButtonPL.setAttribute("lang", "pl");
+          webButtonPL.classList.add("cta__link");
+          webButtonPL.innerHTML = "Odwiedź stronę";
+          webLink.appendChild(webButtonPL);
+
+          const webButtonEN = document.createElement("button");
+          webButtonEN.setAttribute("lang", "en");
+          webButtonEN.classList.add("cta__link");
+          webButtonEN.innerHTML = "Visit website";
+          webLink.appendChild(webButtonEN);
 
           cta.append(gitLink, webLink);
           child.append(title, desc, usedTechs, cta);
@@ -63,4 +82,6 @@ export default (async () => {
         }
       }
     );
-})();
+};
+
+export default work;

@@ -17,20 +17,27 @@
 
 <body>
     <header class="header">
-        <a href="/"><h1>Szymon Paluch</h1></a>
-        <div>
-            <nav class="header__nav" id="nav">
-                <a class="header__link" href="#about" aria-label="O mnie">O mnie</a>
-                <a class="header__link" href="#work" aria-label="Projekty">Projekty</a>
-                <a class="header__link" href="#contact" aria-label="kontaktowy">Kontakt</a>
-            </nav>
+        <div class="header__flex">
+            <a href="/"><h1>Szymon Paluch</h1></a>
+            <!--Language switcher-->
+            <button class="button" id="switch-language"><i class="bi-globe2"></i> <span id="en">en</span> | <span id="pl">pl</span></button>
         </div>
+
+        <nav class="header__nav" id="nav" lang="pl">
+            <a class="header__link" href="#about" aria-label="O mnie">O mnie</a>
+            <a class="header__link" href="#work" aria-label="Projekty">Projekty</a>
+            <a class="header__link" href="#contact" aria-label="kontaktowy">Kontakt</a>
+        </nav>
+        <nav class="header__nav" id="nav" lang="en">
+            <a class="header__link" href="#about" aria-label="O mnie">About</a>
+            <a class="header__link" href="#work" aria-label="Projekty">Projects</a>
+            <a class="header__link" href="#contact" aria-label="kontaktowy">Contact</a>
+        </nav>
     </header>
+
     <section class="hero" id="about">
-        <div class="hero__about two-columns">
-            <h2 class="hero__info-title">
-                Cześć! Mam na imię Szymon
-            </h2>
+        <div class="hero__about two-columns" lang="pl">
+            <h2 class="hero__info-title">Cześć! Mam na imię Szymon</h2>
             <p>
                 Jestem młodym programistą, gotowym do rozpoczęcia kariery w branży IT. 
                 Każdego dnia dążę do rozwoju jako deweloper oraz tworzenia coraz to ciekawszych projektów.
@@ -41,24 +48,50 @@
                 <a class="cta__link" href="#contact">Skontaktujmy się</a>
             </nav>
         </div>
+        <div class="hero__about two-columns"  lang="en">
+            <h2 class="hero__info-title">Hi there! I'm Szymon</h2>
+            <p>
+                I'm a young programmer, ready to start working in the realm of IT.
+                Each day i strive to expand as a developer and create captivating websites and projects.
+                Contact me down below and let's build your own website.
+            </p>
+            <nav class="cta">
+                <a class="cta__link" href="#work">Check my work</a>
+                <a class="cta__link" href="#contact">Contact me</a>
+            </nav>
+        </div>
         <div class="hero__background hero__background--image"></div>
         <div class="hero__background hero__background--triangle"></div>
     </section>
+
     <section class="work" id="work">
-        <h2>Moje projekty</h2>
-        <p class="work__description">
+        <h2 lang="pl">Moje projekty</h2>
+        <h2 lang="en">My work</h2>
+
+        <p class="work__description" lang="pl">
             Poniżej możesz sprawdzić projekty które stworzyłem w przeszłości bądź nadal nad nimi pracuje. 
-            W większości sa one stworzone w technologiach ReactJS oraz GatsbyJS, są to frameworki które najlepiej opracowałem.
+            W większości są one stworzone w technologiach ReactJS oraz GatsbyJS, są to frameworki które najlepiej opracowałem.
             Pracuje również w zwykłym HTMLu, SCSSie oraz JSie. Dla większej ilości informacji na temat mojego stacku technologicznego
             zachęcam do odwiedzenia <a href="https://github.com/rekeye" target="_blank" rel="noopener noreferrer">mojego Githuba</a>.
+            Opisy poniższych projektów są w języku angielskim co jest spowodowane prowadzeniem mojego Githuba w tym właśnie języku.
         </p>
+        <p class="work__description" lang="en">
+            Here you can check out my previous projects. They are mainly created using ReactJS and GatsbyJS frameworks, 
+            although I develop using plain HTML5, SCSS and VanillaJS. For more information considering my tech stack 
+            refer to <a href="https://github.com/rekeye" target="_blank" rel="noopener noreferrer">my GitHub page</a>.
+        </p>
+
         <div class="work__content"></div>
-        <a class="cta__link text-center" href="https://github.com/rekeye" target="_blank" rel="noopener noreferrer">Więcej projektów</a>
+        <a class="cta__link text-center" href="https://github.com/rekeye" target="_blank" rel="noopener noreferrer" lang="pl">Więcej projektów</a>
+        <a class="cta__link text-center" href="https://github.com/rekeye" target="_blank" rel="noopener noreferrer" lang="en">More projects</a>
     </section>
+
     <section class="contact" id="contact">
-        <h2>Kontakt</h2>
+        <h2 lang="pl">Kontakt</h2>
+        <h2 lang="en">Kontakt</h2>
+
         <div class="contact__columns">
-            <div>
+            <div lang="pl">
                 <h3>Napisz do mnie maila:</h3>
                 <form class="contact__form" action="https://formsubmit.co/12szymon.paluch34@gmail.com" method="post"> 
                     <label for="name">Imię: </label>
@@ -72,8 +105,23 @@
                     <input type="hidden" name="_subject" value="Portfolio - formularz kontaktowy">
                 </form>
             </div>
+            <div lang="en">
+                <h3>Send me an email:</h3>
+                <form class="contact__form" action="https://formsubmit.co/12szymon.paluch34@gmail.com" method="post"> 
+                    <label for="name">Name: </label>
+                    <input class="contact__input" type="text" name="name" placeholder="Name" required>
+                    <label for="email">Email address:</label>
+                    <input class="contact__input" type="email" name="email"  placeholder="Email address" required>
+                    <label for="message">Your message:</label>
+                        <textarea class="contact__textarea" name="message" cols="30" rows="10" required></textarea>
+                    <input class="contact__submit" type="submit" value="Send message">
+        
+                    <input type="hidden" name="_subject" value="Portfolio - formularz kontaktowy">
+                </form>
+            </div>
             <div>
-                <h3>Inne formy kontaktu:</h3>
+                <h3 lang="pl">Inne formy kontaktu:</h3>
+                <h3 lang="en">Other ways to contact me:</h3>
                 <div class="icon__container">
                     <a class="cta__link cta__link--contact" href="tel:+48508653443">
                         <i class="bi-telephone-outbound-fill icon"></i>
@@ -91,13 +139,13 @@
             </div>
         </div>
     </section>
+
     <footer>
         <div>
             <h3>Szymon Paluch</h3>
             <h4>Front-End Developer</h4>
-            <p>
-                Stwórzmy razem coś nowego.
-            </p>
+            <p lang="pl">Stwórzmy razem coś nowego.</p>
+            <p lang="en">Let's create something new.</p>
         </div>
         <div>
             <h3>Media: </h3>
@@ -105,13 +153,19 @@
             <a href="https://www.linkedin.com/feed/">LinkedIn</a>
             <a href="https://www.facebook.com/profile.php?id=100010026219620">Facebook</a>
         </div>
-        <div>
+        <div lang="pl">
             <h3>Menu: </h3>
             <a href="#about">O mnie</a>
             <a href="#work">Moje projekty</a>
             <a href="#contact">Kontakt</a>
         </div>
-        @2021, Szymon Paluch
+        <div lang="en">
+            <h3>Menu: </h3>
+            <a href="#about">About me</a>
+            <a href="#work">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <p>@2021, Szymon Paluch</p>
     </footer>
 </body>
 
