@@ -9249,18 +9249,18 @@ const locationAPI = (lat, lng) =>
 //api call using fetch
 var locationAPI = function locationAPI(lat, lng) {
   var url = "https://eu1.locationiq.com/v1/reverse.php";
-  var data = {
+  var params = {
     key: process.env.LOCATIONIQ_ACCESS_TOKEN,
     lat: lat,
     lng: lng
   };
+  url.search = new URLSearchParams(params).toString();
   var headers = new Headers();
   headers.append("Access-Control-Allow-Origin", "*");
   headers.append("Content-Type", "application/json");
   return fetch(url, {
     method: "GET",
     mode: "cors",
-    body: JSON.stringify(data),
     headers: headers
   }).then(function (_ref) {
     var data = _ref.data;
