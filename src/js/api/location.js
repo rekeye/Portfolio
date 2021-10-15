@@ -1,3 +1,7 @@
+// this file contains api calls for user's location
+
+// api call using axios (switched to fetched due to problems with cors)
+/*
 const axios = require("axios");
 
 const locationAPI = (lat, lng) =>
@@ -19,5 +23,30 @@ const locationAPI = (lat, lng) =>
       ({ data }) => data.results[response.results.length - 1].formatted_address
     )
     .catch((error) => console.error(error));
+*/
+
+//api call using fetch
+const locationAPI = (lat, lng) => {
+  const url = "https://eu1.locationiq.com/v1/reverse.php";
+  const data = {
+    key: process.env.LOCATIONIQ_ACCESS_TOKEN,
+    lat: lat,
+    lng: lng,
+  };
+  const headers = new Headers();
+  headers.append("Access-Control-Allow-Origin", "*");
+  headers.append("Content-Type", "application/json");
+
+  return fetch(url, {
+    method: "GET",
+    mode: "cors",
+    body: JSON.stringify(data),
+    headers: headers,
+  })
+    .then(
+      ({ data }) => data.results[response.results.length - 1].formatted_address
+    )
+    .catch((error) => console.error(error));
+};
 
 export default locationAPI;
