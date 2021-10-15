@@ -9220,22 +9220,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* provided dependency */ var process = __webpack_require__(5);
 /* provided dependency */ var console = __webpack_require__(7);
-var axios = __webpack_require__(61);
+// this file contains api calls for user's location
+// api call using axios (switched to fetched due to problems with cors)
 
-var locationAPI = function locationAPI(lat, lng) {
-  return axios({
+/*
+const axios = require("axios");
+
+const locationAPI = (lat, lng) =>
+  axios({
     method: "GET",
     url: "https://eu1.locationiq.com/v1/reverse.php",
     headers: {
-      'Access-Control-Allow-Origin': '*',
-      Accept: 'application/json',
-      'Content-Type': 'application/json'
-    },
+			'Access-Control-Allow-Origin': '*',
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+		},
     data: {
       key: process.env.LOCATIONIQ_ACCESS_TOKEN,
       lat: lat,
-      lng: lng
-    }
+      lng: lng,
+    },
+  })
+    .then(
+      ({ data }) => data.results[response.results.length - 1].formatted_address
+    )
+    .catch((error) => console.error(error));
+*/
+//api call using fetch
+var locationAPI = function locationAPI(lat, lng) {
+  var url = "https://eu1.locationiq.com/v1/reverse.php";
+  var data = {
+    key: process.env.LOCATIONIQ_ACCESS_TOKEN,
+    lat: lat,
+    lng: lng
+  };
+  var headers = new Headers();
+  headers.append("Access-Control-Allow-Origin", "*");
+  headers.append("Content-Type", "application/json");
+  return fetch(url, {
+    method: "GET",
+    mode: "cors",
+    body: JSON.stringify(data),
+    headers: headers
   }).then(function (_ref) {
     var data = _ref.data;
     return data.results[response.results.length - 1].formatted_address;
