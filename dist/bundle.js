@@ -9248,7 +9248,7 @@ const locationAPI = (lat, lng) =>
 */
 //api call using fetch
 var locationAPI = function locationAPI(lat, lng) {
-  var url = "https://eu1.locationiq.com/v1/reverse.php";
+  var url = new URL("https://eu1.locationiq.com/v1/reverse.php");
   var params = {
     key: process.env.LOCATIONIQ_ACCESS_TOKEN,
     lat: lat,

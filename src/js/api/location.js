@@ -27,7 +27,7 @@ const locationAPI = (lat, lng) =>
 
 //api call using fetch
 const locationAPI = (lat, lng) => {
-  const url = "https://eu1.locationiq.com/v1/reverse.php";
+  const url = new URL("https://eu1.locationiq.com/v1/reverse.php");
   const params = {
     key: process.env.LOCATIONIQ_ACCESS_TOKEN,
     lat: lat,
