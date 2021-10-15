@@ -40,12 +40,12 @@ export default (async () => {
   } else {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
-        (position) => {
+        async (position) => {
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
-          const country = locationAPI(latitude, longitude);
+          const country = await locationAPI(latitude, longitude);
 
-          if (country === "Poland") {
+          if (country === "PL") {
             hide(englishElements);
             polishButton.classList.add("button__lang--chosen");
             Cookies.set("lang", "pl", { expires: 7 });

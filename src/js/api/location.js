@@ -27,26 +27,26 @@ const locationAPI = (lat, lng) =>
 
 //api call using fetch
 const locationAPI = (lat, lng) => {
-  const url = new URL("https://eu1.locationiq.com/v1/reverse.php");
+  const url = new URL(
+    `https://api.tomtom.com/search/2/reverseGeocode/${lat},${lng}.json`
+  );
   const params = {
-    key: process.env.LOCATIONIQ_ACCESS_TOKEN,
-    lat: lat,
-    lng: lng,
+    key: process.env.TOM_TOM_API_KEY,
   };
   url.search = new URLSearchParams(params).toString();
 
   const headers = new Headers();
-  headers.append("Access-Control-Allow-Origin", "*");
   headers.append("Content-Type", "application/json");
 
-  return fetch(url, {
+  const request = new Request(url, {
     method: "GET",
     mode: "cors",
     headers: headers,
-  })
-    .then(
-      ({ data }) => data.results[response.results.length - 1].formatted_address
-    )
+  });
+
+  return fetch(request)
+    .then((res) => res.json())
+    .then((res) => res.addresses[0].address.countryCode)
     .catch((error) => console.error(error));
 };
 

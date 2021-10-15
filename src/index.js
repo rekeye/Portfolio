@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 //styles
 import "./scss/main.scss";
 //event listeners
