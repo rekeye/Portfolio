@@ -28,11 +28,13 @@ const locationAPI = (lat, lng) =>
 //api call using fetch
 const locationAPI = (lat, lng) => {
   const url = "https://eu1.locationiq.com/v1/reverse.php";
-  const data = {
+  const params = {
     key: process.env.LOCATIONIQ_ACCESS_TOKEN,
     lat: lat,
     lng: lng,
   };
+  url.search = new URLSearchParams(params).toString();
+
   const headers = new Headers();
   headers.append("Access-Control-Allow-Origin", "*");
   headers.append("Content-Type", "application/json");
@@ -40,7 +42,6 @@ const locationAPI = (lat, lng) => {
   return fetch(url, {
     method: "GET",
     mode: "cors",
-    body: JSON.stringify(data),
     headers: headers,
   })
     .then(
