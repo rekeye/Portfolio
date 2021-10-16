@@ -1,17 +1,15 @@
 //this file creates an event listener handling smooth scrolling of anchors
 
-import Cookies from "js-cookie";
-
 const languageButton = (button, polishElements, englishElements) => {
   const polishButton = document.getElementById("pl");
   const englishButton = document.getElementById("en");
 
   const toggle = (el) => {
     if (el.nodeName === "HTML") return;
-    if (el.classList.contains("hide")) {
-      el.classList.remove("hide");
+    if (el.classList.contains("hidden")) {
+      el.classList.remove("hidden");
     } else {
-      el.classList.add("hide");
+      el.classList.add("hidden");
     }
   };
 

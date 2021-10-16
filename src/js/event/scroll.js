@@ -5,7 +5,15 @@ export default (() =>
     anchor.addEventListener("click", (e) => {
       e.preventDefault();
 
-      document.querySelector(anchor.getAttribute("href")).scrollIntoView({
+      const targetId = anchor.getAttribute("href");
+      const target = document.querySelector(targetId);
+
+      const headerOffset = 120;
+      const targetPosition = target.getBoundingClientRect().top;
+      const offsetPosition = targetPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
         behavior: "smooth",
       });
     })

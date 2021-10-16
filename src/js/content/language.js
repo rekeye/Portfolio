@@ -2,79 +2,74 @@
 // function in this file is triggered by event listener in /src/js/event/languageButton.js
 
 import locationAPI from "../api/location";
-import languageButton from "../event/languageButton";
-import work from "./work";
-import Cookies from "js-cookie";
+import chooseLang from "../helpers/chooseLang";
+import error from "../helpers/error";
 
-const hide = (elArray) =>
-  elArray.forEach((el) => {
-    if (el.nodeName === "HTML") return;
-    el.classList.add("hide");
-  });
+// constant variables for error reduction
+const PL = "PL",
+  EN = "EN";
 
-export default (async () => {
-  await work();
+const language = (storage) => {
+  // dom element grabbers
+  const button = document.getElementById("switch-language"),
+    lang = storage.get("lang");
+  const buttons = {
+    en: document.getElementById("en"),
+    pl: document.getElementById("pl"),
+  };
+  const elements = {
+    en: document.querySelectorAll('[lang="en"]'),
+    pl: document.querySelectorAll('[lang="pl"]'),
+  };
 
-  const button = document.getElementById("switch-language");
-  const polishButton = document.getElementById("pl");
-  const englishButton = document.getElementById("en");
-
-  // Initially disable language switching button. This will be enabled by languageButton function
+  // Initially disable language switching button. This will be enabled by chooseLang function after everything is set up
   button.setAttribute("disabled", "disabled");
 
-  const polishElements = document.querySelectorAll('[lang="pl"]');
-  const englishElements = document.querySelectorAll('[lang="en"]');
-
   // Check if language cookie already exists.
-  if (Cookies.get("lang")) {
-    const lang = Cookies.get("lang");
-    if (lang === "pl") {
-      hide(englishElements);
-      polishButton.classList.add("button__lang--chosen");
-      languageButton(button, polishElements, englishElements);
+  if (lang) {
+    if (lang === PL) {
+      chooseLang(button, buttons.pl, elements.en, elements.pl);
     } else {
-      hide(polishElements);
-      englishButton.classList.add("button__lang--chosen");
-      languageButton(button, polishElements, englishElements);
+      chooseLang(button, buttons.en, elements.pl, elements.en);
     }
   } else {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
-        async (position) => {
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
-          const country = await locationAPI(latitude, longitude);
+        async ({ coords: { lat, lng } }) => {
+          //make the api call for users country
+          const country = await locationAPI(lat, lng);
 
-          if (country === "PL") {
-            hide(englishElements);
-            polishButton.classList.add("button__lang--chosen");
-            Cookies.set("lang", "pl", { expires: 7 });
-            languageButton(button, polishElements, englishElements);
+          if (country === PL) {
+            chooseLang(button, buttons.pl, elements.en, elements.pl, {
+              storage,
+              langCookie: PL,
+            });
           } else {
-            hide(polishElements);
-            englishButton.classList.add("button__lang--chosen");
-            Cookies.set("lang", "en", { expires: 7 });
-            languageButton(button, polishElements, englishElements);
+            chooseLang(button, buttons.en, elements.pl, elements.en, {
+              storage,
+              langCookie: EN,
+            });
           }
         },
-        (error) => {
-          if (error.code == error.PERMISSION_DENIED) {
-            console.error("Permission denied. Defaulting to English!");
+        (err) => {
+          if (err.code === err.PERMISSION_DENIED) {
+            error("Permission denied. Defaulting to English!");
           } else {
-            console.error("Unknown error. Defaulting to English!");
+            error("Unknown error. Defaulting to English!");
           }
-          hide(polishElements);
-          englishButton.classList.add("button__lang--chosen");
-          Cookies.set("lang", "en", { expires: 7 });
-          languageButton(button, polishElements, englishElements);
+          chooseLang(button, buttons.en, elements.pl, elements.en, {
+            storage,
+            langCookie: EN,
+          });
         }
       );
     } else {
-      // geolocation IS NOT available
-      hide(polishElements);
-      englishButton.classList.add("button__lang--chosen");
-      Cookies.set("lang", "en", { expires: 7 });
-      languageButton(button, polishElements, englishElements);
+      chooseLang(button, buttons.en, elements.pl, elements.en, {
+        storage,
+        langCookie: EN,
+      });
     }
   }
-})();
+};
+
+export default language;

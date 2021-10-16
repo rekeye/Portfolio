@@ -1,6 +1,6 @@
 //this file sticks the navbar to the top of the page on scroll below offset value
 
-export default (() => {
+const stickyNav = () => {
   const header = document.querySelector(".header");
   const offset = header.offsetTop;
 
@@ -13,4 +13,6 @@ export default (() => {
   };
 
   window.onscroll = () => handleScroll();
-})();
+};
+
+export default stickyNav;
