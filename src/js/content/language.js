@@ -32,7 +32,6 @@ const language = (storage) => {
   } else {
     // check users language using the navigator.language property, docs: https://developer.mozilla.org/en-US/docs/Web/API/Navigator/language
     if (/^pl\b/.test(navigator.language)) {
-      console.log(navigator.language);
       chooseLang(button, buttons.pl, elements.pl, elements.en, {
         storage,
         langCookie: PL,

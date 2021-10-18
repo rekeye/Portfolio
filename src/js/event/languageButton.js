@@ -1,4 +1,5 @@
 //this file creates an event listener handling smooth scrolling of anchors
+import Cookies from "js-cookie";
 
 const languageButton = (button, polishElements, englishElements) => {
   const polishButton = document.getElementById("pl");
