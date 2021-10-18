@@ -4,7 +4,6 @@ import Cookies from "js-cookie";
 import "./scss/main.scss";
 // api
 import "./js/api/githubRepos";
-import "./js/api/location";
 // event listeners
 import "./js/event/scroll";
 import "./js/event/languageButton";

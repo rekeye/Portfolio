@@ -4,8 +4,8 @@ import hide from "./hide";
 const chooseLang = (
   button,
   langButton,
-  hiddenElements,
   chosenElements,
+  hiddenElements,
   { storage = "", langCookie = "" } = {}
 ) => {
   hide(hiddenElements);
