@@ -1,9 +1,7 @@
-const { DefinePlugin } = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
-require("dotenv").config("./.env");
 
 module.exports = {
   module: {
@@ -38,9 +36,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new DefinePlugin({
-      "process.env": JSON.stringify(process.env),
-    }),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "./index.html",
